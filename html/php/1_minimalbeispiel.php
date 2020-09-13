@@ -4,11 +4,11 @@
 <head>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <title>Titel der Website</title>
+    <title>Meine erste PHP-Site</title>
 </head>
 
 <body>
-    <p>Das ist ein Minimalbeispiel.</p>
+   <?php echo "<p>Mein erstes PHP Script!</p>"; ?>
 </body>
 
 </html>

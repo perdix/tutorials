@@ -4,11 +4,11 @@
 <head>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <title>Titel der Website</title>
+    <title>PHP-Info</title>
 </head>
 
 <body>
-    <p>Das ist ein Minimalbeispiel.</p>
+   <?php phpinfo(); ?> // Ausgabe der installierten PHP-Version am Server mit vielen zusätzlichen Details
 </body>
 
 </html>
