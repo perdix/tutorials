@@ -9,7 +9,7 @@
 
 <body>
 <?php
-// date is a built-in function, date("G") returns the current hour of the server time
+// Date ist eine built-in Funktion von PHP
 if(date("G") < 10) {
 	$greeting= "Guten Morgen!";
 }
