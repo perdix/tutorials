@@ -11,7 +11,7 @@
 <?php
 
 $names = ["Mario", "Alexander", "Steven", "Maria", "Hannah", "Nora"];
-$$char_count = 0;
+$char_count = 0;
 
 foreach ($names as $name) {
     $char_count = $char_count + strlen($name);
