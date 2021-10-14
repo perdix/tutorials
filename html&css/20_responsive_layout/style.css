@@ -1,7 +1,8 @@
 
 body {
 	margin: 0;
-	font-size: 30px;
+	color: white;
+	font-size: 80px;
 }
 
 /* Some colors to better highlight thee layout */
@@ -27,42 +28,36 @@ section {
 	background-color: mediumseagreen;
 }
 
-
-/* Basic layout on mobile view (mobile first) */
-.wrapper {
-	display: grid; /* Defining the basic grid behaviour */
-	grid-template-columns: 1fr; 
-	gap: 15px;
-	min-height: 100vh; /* Wrapper should be at least the whole screen height */
-	max-width: 2000px; /* Wrapper should be maximum 2000px wide */
-	width: 100%;
+.wrapper{
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 10px;
+	min-height: 100vh;
+	width:100%;
+	max-width: 2000px;
 	margin: auto;
 }
-
-/* Basic layout for medium-sized screens */
-@media(min-width: 768px) {
+@media (min-width: 768px) {
 	.wrapper {
 		grid-template-columns: 1fr 2fr;
 	}
-	nav, footer, section, header, .right {
+	nav, header,footer, section, .right {
 		grid-column: 1/3;
 	}
-	.left {
-		grid-column: 1/2;
+}
+
+@media (min-width: 1200px){
+	.wrapper {
+		grid-template-columns: 2fr 5fr 1fr;
+	}
+	nav, header, footer, section {
+		grid-column: 1/4;
 	}
 	main {
 		grid-column: 2/3;
 	}
-}
-
-/* Basic layout for large screens */
-@media(min-width: 1200px) {
-	.wrapper {
-		grid-template-columns: 2fr 5fr 1fr;
-		grid-template-rows: auto auto auto auto auto;
-	}
-	nav, footer, section, header {
-		grid-column: 1/4;
+	.left {
+		grid-column: 1/2;
 	}
 	.right {
 		grid-column: 3/4;
