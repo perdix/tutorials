@@ -1,0 +1,22 @@
+/* h1 selects all h1 headings */
+h1 {
+	background-color: blue;
+	font-size: 25px;
+	color: white;
+	padding: 10px;
+}
+
+/* p selects all paragraphs */
+p {
+	color: red;
+}
+
+/* Selects all elements with the class my-class */
+.my-class {
+	color: green;
+}
+
+/* Selects the element with ID my-id */
+#my-id {
+	color: darkblue;
+}

@@ -1,0 +1,144 @@
+/*
+* title: CSS for  a online course
+* author: Paul Opitz
+* date:  2021-11-04
+*/
+
+
+
+
+
+/*************** General Styles ********************/
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+
+:root {
+	--base-padding: 30px;
+	--base-margin: 30px;
+	--primary-color: rgb(16, 63, 99, 1.0);
+	--primary-color-light: rgb(191, 210, 224, 1.0);
+	--white: rgb(255, 255, 255, 1.0);
+	--basic-font: "Open Sans"; 
+}
+
+body {
+	margin: 0;
+	font-family: var(--basic-font);
+}
+
+h1, h2, h3 {
+	text-align: center;
+	margin: 0;
+}
+h1 {
+	font-size: 40px;
+}
+h2 {
+	font-size: 30px;
+}
+h3 {
+	font-size: 20px;
+}
+
+.cover {
+	background-color: var(--primary-color);
+	color: var(--white);
+}
+
+#menu {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	padding: var(--base-padding);
+	background-color: rgba(255, 255, 255, 0.8);
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	z-index: 1;
+	color: black;
+	box-sizing: border-box;
+}
+
+.material-icons-outlined {
+	color: var(--primary-color);
+	font-size: 36px;
+}
+
+
+
+
+/*************** Component Styles ********************/
+
+
+nav {
+	background-color: var(--primary-color-light);
+	position: fixed;
+	left: -100%;
+	top: 0;
+	width: 80%;
+	min-height: 100vh;
+	padding: var(--base-padding);
+	z-index: 2;
+}
+nav:target {
+	left: 0;
+	transition: all 0.4s;
+}
+
+nav div {
+	display: flex;
+	padding: var(--base-padding);
+	justify-content: space-between;
+	align-items: center;
+}
+
+main {
+
+}
+
+
+header, footer, section {
+	height: 100vh;
+	max-width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	box-sizing: border-box;
+	border: 1px solid white;
+}
+
+
+header {
+	
+}
+
+section {
+
+}
+
+footer {
+	
+}
+
+
+
+
+
+
+
+
+
+
+/*************** Page Styles ********************/
+
+
+
+
+
+
+
+
+
+
+
+

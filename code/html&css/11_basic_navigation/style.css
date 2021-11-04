@@ -1,0 +1,100 @@
+body {
+	margin: 0;
+}
+
+
+/* Navigation  */
+nav {
+	background-color: darkseagreen;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 15px;
+}
+nav img {
+	height: 50px;
+	border-radius: 50%;
+}
+nav ul {
+	list-style: none;
+}
+nav ul li {
+	display: inline-block;
+}
+nav ul li a {
+	color: black;
+	font-size: 24px;
+	margin: 8px;
+	padding: 8px;
+	text-decoration: none;
+	background-color: white;
+	border-radius: 8px; 
+}
+
+nav ul li a:hover {
+	background-color: lightgreen;
+	color: black;
+}
+
+
+/* Header */
+header {
+	height: 300px;
+	background-color: purple;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-image: url("header-background.jpg");
+	background-size: cover;
+	background-position: center;
+}
+
+header h1 {
+	color: white;
+}
+
+
+/* Main Section */
+.main-area {
+	display: flex;
+	justify-content: space-between;
+	align-items: stretch;
+	min-height: 200px;
+}
+.main-area aside {
+	background-color: darkseagreen;
+	padding: 30px;
+	width: 30%;
+}
+
+.main-area main {
+	background-color: white;
+	width: 70%;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	flex-wrap: wrap;
+}
+
+.main-area main article {
+	margin: 10px;
+	width: 250px;
+	height: 300px;
+	background-image: url("article-background.jpg");
+	background-size: cover;
+	background-position: center;
+}
+.main-area main article .info {
+	background-color: rgba(255,255,255,0.6);
+	padding: 15px;
+}
+
+
+/* Footer */
+footer {
+	height: 100px;
+	background-color: lightgreen;
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
+}
