@@ -9,7 +9,7 @@
 	<link rel="stylesheet" href="../style.css">
 </head>
 
-<body>
+<body id="html">
 
 		<div id="menu">
 			<a href="#navigation" id="hamburger">
@@ -27,53 +27,93 @@
 			</div>
 
 			<ul>
-				<li><a href="#intro-web">Intro Web</a></li>
-				<li><a href="#basic-structure">Basic Structure</a></li>
-				<li><a href="#intro-css">Intro CSS</a></li>
-				<li><a href="#selectors">Selectors</a></li>
-				<li><a href="#boxes">Boxes</a></li>
-				<li><a href="#images">Images</a></li>
+				<li><a href="#intro-web">1. Intro Web</a></li>
+				<li><a href="#basic-structure">2. Basic Structure</a></li>
+				<li><a href="#intro-css">3. Intro CSS</a></li>
+				<li><a href="#selectors">4. Selectors</a></li>
+				<li><a href="#boxes">5. Boxes</a></li>
+				<li><a href="#images">6. Images</a></li>
 			</ul>
 
 		</nav>
 
 		<main>
 			
-			<header id="header" class="cover">
+			<header id="header">
+				<div class="bg" style="background-image: url('header-bg.jpg');"></div>
+				<div class="bg cover"></div>
 				<div>
 					<h1>HTML & CSS Course</h1>
 					<h2>A systematic approach in 20 Chapters</h2>
 				</div>
+				<p class="abs bottom left">paul.opitz@outlook.com</p>
+				<p class="abs bottom right">Update: Nov 2021</p>
 			</header>
 
 
 			<section id="intro-web" class="cover">
 				<div>
-					<h1>What is the Web</h1>
-					<h2>Basic Terms and Definitions</h2>
+					<h1>Crawling through the Web</h1>
+					<h2>Terms and Definitions</h2>
 				</div>
 
 			</section>
 
-			<section>
-				
+			<section id="info" class="info">
+				<div>
+					<h1>explanation</h1>
+				</div>
+			</section>
+
+			<section id="memo" class="memo">
+				<div>
+					<h1>Memorize</h1>
+				</div>
+			</section>
+
+			<section id="example" class="example">
+				<div>
+					<h1>Example</h1>
+				</div>
+			</section>
+
+			<section id="exercise" class="exercise">
+				<div>
+					<h1>Exercise</h1>
+				</div>
+			</section>
+
+			<section id="more" class="more">
+				<div>
+					<h1>More</h1>
+				</div>
 			</section>
 
 
 			<footer id="footer" class="cover">
 				<div>
 					<h1>That's it! Congratulation!</h1>
-					<h2>You are read to dig deeper!</h2>
+					<h2>You are ready to dig deeper!</h2>
 				</div>
 			</footer>
 
 
 		</main>
 		
-
-
-
-	
 </body>
 
 </html>
+
+<script type="text/javascript">
+	
+window.addEventListener("keyup", (e) => {
+	if (e.key == "ArrowLeft") {
+		let currentSection = document.getElementById(location.hash.substring(1));
+		location.hash = currentSection.previousElementSibling.id;
+	}
+	if (e.key == "ArrowRight") {
+		let currentSection = document.getElementById(location.hash.substring(1));
+		location.hash = currentSection.nextElementSibling.id;
+	}
+});
+</script>
