@@ -1,13 +1,14 @@
-# Tutorials and Code Snippets
-Code snippets and tutorials for various programming languages! 
+# Tutorial Snippets
 
+Code snippets and tutorials for various programming languages. 
+Ordered by difficulty, from super easy to use-case ready!
 
-# HTML & CSS
+Serves as a reminder for myself, for students and to anyone who likes to use it.
 
-# JS
+Currently for:
 
-# PHP
+* HTML&CSS
+* JavaScript
+* PHP
+* Python
 
-# Python
-
-# SQL
