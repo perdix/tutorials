@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Basic Footer</title>
+	<style>
+		body {
+			margin: 0;
+		}
+		footer {
+			display: flex;
+			/* All divs have same distance to each other */
+			justify-content: space-evenly;
+			align-items: flex-start;
+			background: linear-gradient(10deg, rgba(11,37,119,1) 0%, rgba(45,136,179,1) 100%);
+			color: white;
+			padding: 60px;
+		}
+		footer h2 {
+			font-size: 30px;
+			font-weight: bold;
+		}
+		footer p a {
+			color: white;
+		}
+		footer p a:hover {
+			background-color: white;
+			color: darkblue;
+		}
+		/* last-child is a pseudo-class, it selects only the last child of an element */
+		footer div:last-child {
+			width: 50%;
+		}
+	</style>
+</head>
+<body>
+
+	<footer>
+		<div>
+			<h2>About</h2>
+			<p><a href="#">Link 1</a></p>
+			<p><a href="#">Link 2</a></p>
+			<p><a href="#">Link 3</a></p>
+		</div>
+		<div>
+			<h2>Services</h2>
+			<p><a href="#">Link 1</a></p>
+			<p><a href="#">Link 2</a></p>
+			<p><a href="#">Link 3</a></p>
+		</div>
+		<div>
+			<h2>Our Company</h2>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras eu lacus in enim fringilla vulputate. Phasellus volutpat quis eros ut pulvinar. Sed laoreet sagittis dictum. Integer rutrum dolor eget cursus tincidunt. Nullam eget facilisis est. Nulla semper odio nisl, quis suscipit magna dictum in. Aenean consectetur elit volutpat nulla ornare, non tincidunt dolor vehicula.</p>
+		</div>
+
+	</footer>
+	
+</body>
+</html>

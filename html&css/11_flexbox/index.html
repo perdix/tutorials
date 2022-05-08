@@ -12,16 +12,21 @@
 			padding: 0;
 			border: 1px solid black;
 		}
+		h1, h2, p{
+			text-align: center;
+		}
 		p {
 			background-color: white;
-			padding: 20px;
-			margin: 0;
+			padding: 10px;
+			margin: 5px;
 		}
 
 		.centered {
-
+			/* Activate Flexbox */
 			display: flex;
+			/* Control the primary axes */
 			justify-content: center;
+			/* Control the secondary axes */
 			align-items: center;
 		}
 		.spaced {
@@ -34,19 +39,33 @@
 			justify-content: space-between;
 			align-items: stretch;
 		}
+		.direction {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			flex-direction: column; /* Switches axes, changes the direction to column */
+		}
 	</style>
 </head>
 
 <body>
 
-	<h2>Box with centered content</h2>
+	<h1>display: flex is very powerful</h1>
+	<p>
+		With display:flex we can control the alignment of the children of an element
+		<br>
+		<a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/">Read more</a>
+	</p>
+	
 
+
+	<h2>Box with centered content</h2>
 	<div class="centered">
 		<p>Content</p>
 	</div>
 
-	<h2>Box with content at the bottom and evenly spaced</h2>
 
+	<h2>Box with content at the bottom and evenly spaced</h2>
 	<div class="spaced">
 		<p>Content 1</p>
 		<p>Content 2</p>
@@ -54,8 +73,13 @@
 	</div>
 
 	<h2>Box with content streched and with space between</h2>
-
 	<div class="stretched">
+		<p>Content 1</p>
+		<p>Content 2</p>
+	</div>
+
+	<h2>Box with centerend content but changed direction</h2>
+	<div class="direction">
 		<p>Content 1</p>
 		<p>Content 2</p>
 	</div>

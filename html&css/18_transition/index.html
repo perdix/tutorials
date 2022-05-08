@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Transition</title>
+	<style>
+		a {
+			padding: 30px;
+			background-color: lightblue;
+			text-decoration: none;
+			color: black;
+			/* Normally a link is a inline-element, with display:block it gets a block element */
+			display: block;
+		}
+		/* Hover gets activated if the mouses hovers of the link */
+		a:hover {
+			background-color: orange;
+			/* 
+			If transition is used, the browser calculates all intermediate states between start and end state automatically. First you have to specify for which css command transition should be used and then how long the transition should take.
+			*/
+			transition: all 3s;
+		}
+	</style>
+</head>
+<body>
+	<h1>Transition</h1>
+	
+	<p>Transition helps to have a smooth change between two CSS states</p>
+
+	<a href="https://google.com">Link</a>
+</body>
+</html>
