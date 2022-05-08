@@ -1,0 +1,62 @@
+
+/* Styling for the whole body */
+body {
+	margin: 0;
+	padding: 50px;
+	background-color: black;
+}
+
+header {
+	background-color: white;
+	padding: 30px;
+	margin: 30px;
+}
+
+main {
+	background-color: lightgreen;
+	padding: 30px;
+	margin: 30px;
+}
+
+footer {
+	background-color: darkgreen;
+	color: white;
+	padding: 60px;
+	margin: 30px;
+	text-align: right;
+}
+
+h1 {
+	font-size: 60px;
+	text-align: center;
+	color: lightgreen;
+}
+
+h2 {
+	font-size: 30px;
+	background-color: white;
+	padding: 15px;
+}
+
+img {
+	width: 300px;
+	margin: 10px;
+	border: 10px dotted darkgreen;
+	/* Creates round corners */
+	border-radius: 30px;
+}
+
+
+p {
+	padding: 15px;
+	font-size: 25px;
+	/* Line height is the distance between the lines. */
+	line-height: 1.5;
+}
+
+ul {
+	background-color: white;
+	color: black;
+	padding: 30px;
+}
+
