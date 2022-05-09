@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+
+body {
+	min-height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+article {
+	display: flex;
+	justify-content: space-between;
+	align-items: stretch;
+	width: 1200px;
+}
+
+
+article img {
+	width: 600px;
+}
+
+
+article div {
+	width: 600px;
+	background: linear-gradient(238deg, rgba(21,40,96,1) 17%, rgba(105,201,255,1) 80%);
+	padding: 30px;
+	position: relative;
+}
+
+article h1 {
+	background-color: white;
+	color: darkblue;
+	padding: 20px;
+	position: absolute;
+	top: 90px;
+	left: 200px;
+	font-size: 80px;
+	font-family: "Lato";
+	text-transform: uppercase;
+}
+
+article p {
+	font-size: 40px;
+	font-family: "Lato";
+	background-color: darkblue;
+	padding: 20px;
+	color: white;
+	position: absolute;
+	top: 50px;
+	left: -100px;
+
+}

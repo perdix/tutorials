@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Fetch Test</title>
+</head>
+<body>
+
+	<h1>Random Cat Info</h1>
+
+	<h2 id="info"></h2>
+	
+</body>
+</html>
+
+<script>
+	
+
+	fetch("https://catfact.ninja/fact")
+		.then(response => response.json())
+	    .then(data => {
+	    	document.getElementById("info").innerHTML = data.fact;
+	    });
+
+
+
+
+</script>

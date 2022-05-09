@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Random Student</title>
+</head>
+<body>
+	
+	<h1>Wer wird geprüft?</h1>
+
+	<h2 id="result"></h2>
+
+</body>
+</html>
+
+<script>
+	fetch("api.php")
+	.then(response => response.json())
+	.then(data => {
+		console.log(data);
+		document.getElementById("result").innerHTML = data.student;
+	});
+	
+
+	
+</script>

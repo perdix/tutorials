@@ -1,0 +1,40 @@
+body {
+	margin: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+}
+main {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-rows: 33.3% 33.3% 33.3%;
+	width: 80vh;
+	height: 80vh;
+	
+}
+
+main div:nth-child(1), main div:nth-child(2), main div:nth-child(3) {
+	border-bottom: 2px solid black;
+}
+
+main div:nth-child(7), main div:nth-child(8), main div:nth-child(9) {
+	border-top: 2px solid black;
+}
+
+main div:nth-child(3n+1) {
+	border-right: 2px solid black;
+}
+
+main div:nth-child(3n+3) {
+	border-left: 2px solid black;
+}
+
+main div img {
+	width: 50%;
+	height: 50%;
+	position: relative;
+	left: 25%;
+	top: 25%;
+}
+

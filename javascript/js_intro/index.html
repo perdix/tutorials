@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>JS Intro</title>
+</head>
+
+<body>
+	<h1>JS Intro</h1>
+	<p id="hallo">Das ist ein Absatz</p>	
+</body>
+
+</html>
+
+<script type="text/javascript">
+	console.log("Hallo Javascript! Schön, dich kennenzulernen!");
+
+	// Wir rechnen mit JavaScript
+	let x = 5;
+	let y = 10;
+	let z = x + y;
+	console.log("Das ist das Ergebnis: " + z);
+
+	// Wir arbeiten mit dem DOM
+	let myParagraph = document.getElementById("hallo");
+	console.log(myParagraph);
+	myParagraph.innerHTML = "Ein neuer Text";
+	myParagraph.style.backgroundColor = "lightblue";
+	myParagraph.style.padding = "30px";
+	myParagraph.style.textAlign = "center";
+
+	// Wir erstellen neue DOM-Objekte
+	let myNewParagraph = document.createElement("p");
+	myNewParagraph.innerHTML = "Hallo neuer Absatz";
+	myNewParagraph.style.backgroundColor = "lightgreen";
+	console.log(myNewParagraph);
+	document.body.append(myNewParagraph);
+
+	// Divs mit einer For-Schleife
+	for (let i=0; i<100;i++) {
+		let myDiv = document.createElement("div");
+		myDiv.style.backgroundColor = "steelblue";
+		myDiv.style.padding = "30px";
+		myDiv.style.margin = "5px";
+		myDiv.innerHTML = "Div Nr: " + i;
+		document.body.append(myDiv);
+	}
+
+	// Divs mit einer For-Schleife (mit wechselnden Farben) und Counter
+	let counter = 0;
+	for (let i=0; i<100;i++) {
+		let myDiv = document.createElement("div");
+		if (i % 2 == 0) {
+			myDiv.style.backgroundColor = "pink";
+			counter++;
+		} else {
+			myDiv.style.backgroundColor = "purple";
+		}
+		myDiv.style.padding = "30px";
+		myDiv.style.margin = "5px";
+		myDiv.innerHTML = "Div Nr: " + i;
+		document.body.append(myDiv);
+	}
+
+	let myCounter = document.createElement("h3");
+	myCounter.innerHTML = "Es gibt " + counter + " pinke Divs";
+	document.body.append(myCounter);
+
+</script>

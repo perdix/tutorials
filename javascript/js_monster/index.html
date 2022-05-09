@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>Monster-Game</title>
+	<style type="text/css">
+		body {
+			background-image: url("bg.jpg");
+			background-size: cover;
+			background-position: center;
+			min-height: 100vh;
+			cursor: crosshair;
+		}
+		img {
+			position: absolute;
+		}
+		h1 {
+			text-align: center;
+		}
+	</style>
+</head>
+
+<body>
+	<h1 id="counter"></h1>
+</body>
+
+</html>
+<script type="text/javascript">
+	let counter = 0;
+
+	function killMonster(event) {
+		event.target.remove();
+		counter++;
+		document.getElementById("counter").innerHTML = counter;
+	}
+
+	for (let i=0; i<25;i++) {
+		let img = document.createElement("img");
+		img.src = "monster.png";
+		img.style.width = "100px";
+		let x = Math.round(Math.random()*100);
+		let y = Math.round(Math.random()*100);
+		img.style.left = x + "%";
+		img.style.top = y + "%";
+		img.addEventListener("click", killMonster);
+		document.body.append(img);
+	}
+
+	setTimeout(function() {}, 1000);
+
+</script>

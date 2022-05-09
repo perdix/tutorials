@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Events</title>
+</head>
+<body>
+	
+<h1>Wir verwenden Events</h1>
+
+<button id="button">Bitte hier klicken!</button>
+
+<hr>
+<input type="text" id="myInput">
+<button id="sayHello">Hallo</button>
+
+
+</body>
+</html>
+
+
+<script>
+	let myButton = document.getElementById("button");
+
+	function doSomething() {
+		console.log("Hallo");
+		window.alert("Hallo");
+	}
+
+	// Add a listener to the button
+	myButton.addEventListener("click", doSomething);
+
+
+	// We add an event handler for typing within the body
+
+	function changeColor(event) {
+		if (event.key == "b") {
+			document.body.style.backgroundColor = "blue";
+		}
+		if (event.key == "o") {
+			document.body.style.backgroundColor = "orange";
+		}
+		if (event.key == "r") {
+			document.body.style.backgroundColor = "red";
+		}
+	}
+
+	document.body.addEventListener("keyup", changeColor);
+
+
+	// Wir verwenden Input Boxen
+	function showInfoBox() {
+		let info = document.getElementById("myInput").value;
+		window.alert(info);
+	}
+
+	document.getElementById("sayHello").addEventListener("click", showInfoBox);
+
+</script>

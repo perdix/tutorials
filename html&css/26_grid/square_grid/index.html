@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<style type="text/css">
+		body {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			min-height: 100vh;
+			margin: 0;
+		}
+
+		header {
+			height: 50vh;
+			width: 50vh;
+			display: grid;
+			grid-template-columns: 1fr 1fr 1fr;
+			grid-template-rows: auto auto auto;
+		}
+		div {
+			border: 1px solid black;
+		}
+		.first {
+			grid-column: 1/3;
+			grid-row: 1/3;
+		}
+		.last {
+			grid-column: 2/4;
+			grid-row: 3/4;
+		}
+	</style>
+</head>
+<body>
+
+	<header>
+		<div class="first"></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div class="last"></div>	
+	</header>
+
+
+
+	
+
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		body {
+			margin: 0;
+			background: linear-gradient(238deg, rgba(21,40,96,1) 17%, rgba(105,201,255,1) 80%);
+			min-height: 100vh;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+		main {
+			height: 80vh;
+			width: 80vw;
+			background-image: url("bg.jpg");
+			background-position: center;
+			background-size: cover;
+			position: relative;
+		}
+		#rocket {
+			position: absolute;
+			left: 20vw;
+			top: 25vh;
+			width: 100px;
+			transform: rotate(50deg);
+		}
+	</style>
+</head>
+<body>
+
+	<main>
+		<img src="spaceship.png" alt="" id="rocket">
+	</main>
+	
+</body>
+</html>
+
+
+<script>
+	function findMe(event) {
+		event.target.style.filter = "drop-shadow(0 0 2rem white)";
+	}
+
+	document.getElementById("rocket").addEventListener("click", findMe);
+</script>
