@@ -17,7 +17,7 @@ body {
 /* Navigation */
 
 nav {
-	background-color: aliceblue;
+	background-color: lightgrey;
 	display: flex;
 	/* Logo and list of links should be separated */
 	justify-content: space-between;
@@ -58,15 +58,16 @@ header {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	background-image: url("header-background.jpg");
-	background-size: cover;
-	background-position: center;
+	background-color: lightgrey;
+	margin-top: 30px;
+	margin-bottom: 30px;
 }
+
 header h1 {
 	font-size: 50px;
 	padding: 70px;
-	border-radius: 70px;
-	background-color: rgba(255,255,255,0.4);
+	color: white;
+	background-color: steelblue;
 }
 
 
@@ -76,32 +77,32 @@ footer {
 	/* All divs have same distance to each other */
 	justify-content: space-evenly;
 	align-items: flex-start;
-	background-color: aliceblue;
-	color: white;
+	background-color: lightgrey;
 	padding: 60px;
+	margin-top: 30px;
 }
 footer h2 {
 	font-size: 30px;
 	font-weight: bold;
-	background-color: steelblue;
 	padding: 15px;
-	border-radius: 20px;
+	
 }
 footer p {
 	color: black;
 	padding: 15px;
 	font-size: 20px;
-
 }
+
 footer p a {
-	color: black;
+	color: white;
 	padding: 15px;
 	font-size: 20px;
 	text-decoration: none;
 	border-radius: 20px;
+	background-color: steelblue;
 }
 footer p a:hover {
-	background-color: white;
+	background-color: #274775;
 }
 /* last-child is a pseudo-class, it selects only the last child of an element */
 footer div:last-child {
@@ -114,7 +115,6 @@ footer div:last-child {
 /* Main */
 #home main {
 	padding: 30px;
-	background-color: #a7CFF0;
 	display: flex;
 	justify-content: space-evenly;
 	align-items: center;
@@ -123,57 +123,28 @@ footer div:last-child {
 }
 #home main article {
 	margin: 30px;
+	height: 300px;
+	width: 300px;
 }
 
 #home main article a {
-	color: black;
+	background-color: steelblue;
 	text-decoration: none;
 	display: block;
-	border-radius: 50px;
-	/* Do not show content that is bigger */
-	overflow: hidden;
-}
-#home main article a:hover {
-	/* Make the card bigger on hover */
-	transform: scale(1.1);
-}
-
-#home main article img {
-	width: 400px;
-	/* Changes the display type to block */
-	display: block;
-}
-
-#home main article div {
-	width: 400px;
-	height: 200px;
-	background-color: white;
-	display: flex;
-	justify-content: space-between;
-	align-items: flex-start;
-	flex-direction: column;
-	/* Do not add the padding to the total width */
-	box-sizing: border-box;
-	padding: 30px;
-}
-
-#home main article h1 {
-	text-transform: uppercase;
-	font-size: 40px;
-	margin: 0;
-}
-
-#home main article p {
-	font-size: 25px;
-	margin: 0;
+	height: 100%;
 }
 
 
 
 
 
-/***************************** Styling for a city page *************************/
+/***************************** Styling for a detail page *************************/
 
-#city {
+#detail {
 
+}
+
+#detail main {
+	background-color: steelblue;
+	height: 700px;
 }

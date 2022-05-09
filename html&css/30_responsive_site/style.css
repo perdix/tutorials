@@ -1,6 +1,6 @@
 /**********************
  * 
- * Full Responsive Shop
+ * Title:  Full Responsive Website Template
  * 
  * Author: Paul Opitz
  * Date: 2021-10-3
@@ -9,7 +9,12 @@
 
 		
 
-/************* Basic Styles ***********/
+/*************************** Basic Styles *******************************/
+:root {
+	--primary-color: steelblue;
+	--primary-color-dark: #274775;
+}
+
 body {
 	margin: 0;
 }
@@ -25,7 +30,7 @@ body {
 	min-height: 100vh; /* Wrapper should be at least the whole screen height */
 	max-width: 2000px; /* Wrapper should be maximum 2000px wide */
 	width: 100%;
-	margin: auto;
+	margin: auto; /* Wrapper should be always in the center */
 }
 
 
@@ -62,15 +67,18 @@ body {
 
 /* Navigation */
 nav {
-	background-color: lightsteelblue;
+	background-color: lightgrey;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	padding: 30px;
 	width: calc(100% - 60px);
 }
+nav img {
+	height: 70px;
+}
 #hamburger {
-	color: dodgerblue;
+	color: var(--primary-color);
 	text-decoration: none;	
 }
 /*  Off-canvas menu */
@@ -93,13 +101,13 @@ nav {
 	padding: 15px 15px;
 	color: white;
 	border-bottom: 1px solid white;
-	background-color: lightsteelblue;
+	background-color: var(--primary-color);
 }
 #menu #close span {
 	color: white;
 }
 #menu #close a:hover span {
-	background-color: dodgerblue;
+	background-color: var(--primary-color);
 }
 #menu ul {
 	display: flex;
@@ -117,14 +125,14 @@ nav {
 #menu ul li a {
 	display: block;
 	padding: 15px 30px;
-	background-color: lightsteelblue;
+	background-color: var(--primary-color);
 	text-decoration: none;
 	color: white;
 	width: calc(100% - 60px);
 	text-transform: uppercase;
 }
 #menu ul li a.highlight, #menu ul li a:hover {
-	background-color: dodgerblue;
+	background-color: var(--primary-color-dark);
 }
 
 /*  Responsive adaptions for wider screens  */
@@ -187,7 +195,7 @@ main {
 	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 }
 main article {
-	background-color: lightsteelblue;
+	background-color: var(--primary-color);
 	/* Makes sure that the height is always the same as the width */
 	aspect-ratio: 1;
 }
