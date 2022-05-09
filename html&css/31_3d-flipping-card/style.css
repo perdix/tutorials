@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Corinthia&family=Cutive+Mono&family=Libre+Baskerville&family=Open+Sans:wght@300&family=Raleway:wght@200&family=Roboto+Slab:wght@100&display=swap');
+
+body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	margin: 0;
+	background-image: url("background.jpg");
+	background-size: cover;
+	background-position: center;
+	overflow: hidden;
+}
+.outer-card:hover .back, .front {
+	transform: translate(-50%, -50%) rotateY(180deg);
+}
+.back, .front {
+	width: 300px;
+	height: 200px;
+	position: absolute;
+	backface-visibility: hidden;
+	border-radius: 50px;
+	border: 10px double rgb(199, 74, 101);
+}
+
+.front {
+	transform: translate(-50%, -50%) rotateY(180deg);
+	background: linear-gradient(308deg, rgba(236,131,78,0.7) 28%, rgba(171,29,85,0.7) 100%);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+}
+
+.back {
+	transform: translate(-50%, -50%);
+	background-image: url("background1.jpg");
+	background-size: cover;
+	background-position: center;
+	opacity: 0.6;
+}
+
+
+
+.inner-card {
+	position: relative;
+	transform-style: preserve-3d;
+	box-shadow: 5px 5px 15px 5px #000000;
+}
+
+.outer-card {
+	perspective: 500px;
+}
+
+h1 {
+	color: white;
+	font-family: "Raleway";
+	text-align: center;
+}

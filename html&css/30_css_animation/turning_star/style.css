@@ -1,0 +1,45 @@
+@keyframes turningstar {
+	0% {
+
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+
+
+
+body {
+	background-color: darkblue;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+}
+
+.star {
+	position: relative;
+	/* Animation */
+	animation-name: turningstar;
+	animation-duration: 5s;
+	animation-iteration-count: infinite;
+	animation-timing-function: linear;
+}
+
+.part1, .part2 {
+	height: 300px;
+	width: 300px;
+	background-color: yellow;
+	position: absolute;
+	transform: translate(-50%, -50%);
+} 
+
+.part2 {
+	transform: translate(-50%, -50%) rotate(45deg);
+}
+
+
+
+User: Lehrer
+PS: L3hr3r-20

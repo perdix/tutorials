@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Flipping Card</title>
+	<style>
+		body {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			min-height: 100vh;
+			background-color: lightgrey;
+		}
+		.inner-card {
+			position: relative;
+			/* Tells the browser to turn on 3d mode */
+			transform-style: preserve-3d;
+			transition: all 3s;
+			box-shadow: 5px 5px 15px 5px black;
+
+		}
+		.inner-card:hover {
+			transform:  rotateY(180deg);
+			transition: all 3s;
+		}
+		.outer-card {
+			/* Shifts the perspective point 2000px far away */
+			perspective: 1000px;
+		}
+		.back, .front {
+			width: 300px;
+			height: 200px;
+			position: absolute;
+			backface-visibility: hidden;
+			border: 10px double black;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+		.front {
+			transform: translate(-50%, -50%) rotateY(180deg);
+			background-color: rgba(255,255,0, 0.4);
+		}
+		.back {
+			background-color: rgba(255,0,255, 0.4);
+			transform: translate(-50%, -50%);
+		}
+
+	</style>	
+</head>
+<body>
+	
+	<div class="outer-card">
+		<div class="inner-card">
+			<div class="back">
+				<h1>Backside</h1>
+			</div>
+			<div class="front">
+				<h1>Frontside</h1>
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>
