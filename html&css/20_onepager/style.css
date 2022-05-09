@@ -1,0 +1,82 @@
+/*
+*
+* Title: Showcase Onepager
+* Author: Paul Opitz
+* Date: 2022-05-09
+*
+*/
+
+
+/* Scrolls smoothly if you click on a jump link */
+:root {
+	scroll-behavior: smooth;
+}
+
+
+body {
+	margin: 0;
+}
+
+/* Navigation */
+nav {
+	background-color: steelblue;
+	padding: 30px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: fixed;
+	width: 100%;
+	box-sizing: border-box;
+}
+
+
+nav ul {
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	list-style-type: none;
+}
+
+nav ul li a {
+	margin: 10px;
+	padding: 20px;
+	background-color: white;
+	color: steelblue;
+	text-decoration: none;
+	border-radius: 10px;
+}
+
+nav ul li a:hover {
+	background-color: darkblue;
+	color: white;
+}
+
+
+header {
+	height: 400px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: lightblue;
+}
+
+header h1 {
+	color: white;
+}
+
+
+section {
+	padding: 300px;
+}
+
+#link1 {
+	background-color: lightsteelblue;
+}
+
+#link2 {
+	background-color: lightcoral;
+}
+
+#link3 {
+	background-color: lightseagreen;
+}

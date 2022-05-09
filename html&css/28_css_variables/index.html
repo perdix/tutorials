@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>CSS Variables</title>
+	<style>
+		/* 
+		  How to declare CSS variables:
+		  CSS variables must always have two dashes at the beginning
+		  CSS variables can contain any property.
+		*/
+		:root {
+		  --main-color: orange;
+		  --primary-color: lightgreen;
+		  --general-font-size: "30px";
+		}
+
+         /* How to use CSS variables */
+         body {
+         	background-color: var(--main-color);
+         }
+         p {
+         	background-color: var(--primary-color);
+         	font-size: var(--general-font-size);
+         	padding: 50px;
+         }
+	</style>
+</head>
+<body>
+	
+	<h1>CSS Variables</h1>
+	<p>Variables are very convenient if you have a big project!</p>
+</body>
+</html>

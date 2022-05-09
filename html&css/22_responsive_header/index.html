@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Responsive Header</title>
+	<style>
+		body {
+			margin: 0;
+		}
+		header {
+			height: 300px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			background-image: url("background.jpg");
+			background-size: cover;
+			background-position: center;
+		}
+		header h1 {
+			font-size: 20px;
+			padding: 50px;
+			background-color: rgba(255,255,255,0.7);
+		}
+		/* 
+			We use two media queries to increase the size.
+			Always start with the smallest width, this is called mobile-first development! 
+
+		*/
+		@media (min-width: 768px) {
+			header {
+				height: 400px;
+			}
+			h1 {
+				font-size: 30px;
+			}
+		}
+		@media (min-width: 1200px) {
+			h1 {
+				font-size: 50px;
+			}
+		}
+	</style>
+</head>
+<body>
+
+	<header>
+		<h1>Welcome</h1>
+	</header>
+	
+</body>
+</html>

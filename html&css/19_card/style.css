@@ -1,0 +1,67 @@
+/* Import of a similar font */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+body {
+	margin: 0;
+	background-color: lightgrey;
+	/* With flexbox the card is in the middle of the page */
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	font-family: "Roboto";
+}
+
+article .image {
+	width: 300px;
+	height: 170px;
+	background-image: url("background.jpg");
+	background-position: center;
+	background-size: cover;
+	padding: 20px;
+	/* .image ist the parent. Thats why it needs to be relative */
+	position: relative;
+}
+
+article .image .red-box {
+	background-color: red;
+	color: white;
+	padding: 8px;
+	font-size: 12px;
+	text-transform: uppercase;
+	position: absolute;
+	margin: 0;
+	/* We use bottom to place the element on the bottom of the parent */
+	bottom: 0px;
+	left: 0px;
+}
+
+article .text {
+	width: 300px;
+	height: 170px;
+	background-color: white;
+	padding: 20px;
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+	flex-direction: column;
+
+}
+
+article .text .mini-header {
+	text-transform: uppercase;
+	font-size: 12px;
+}
+
+article .text .mini-header span {
+	margin-right: 10px;
+}
+
+article .text .mini-footer {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	color: darkgrey;
+	font-size: 12px;
+	width: 100%;
+}

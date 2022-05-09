@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Basic Card</title>
+	<style>
+		body {
+			background-color: #a7CFF0;
+			/* Show the card in the middle of the page */
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			min-height: 100vh;
+
+		}
+		article a {
+			display: block;
+			color: black;
+			text-decoration: none;
+		}
+		article a:hover {
+			transform: scale(1.1);
+		}
+		article img {
+			width: 400px;
+			/* Changes the display type to block */
+			display: block;
+		}
+		article div {
+			width: 400px;
+			height: 200px;
+			background-color: white;
+			display: flex;
+			justify-content: space-between;
+			align-items: flex-start;
+			flex-direction: column;
+			/* Do not add the padding to the total width */
+			box-sizing: border-box;
+			padding: 30px;
+		}
+		article h1 {
+			text-transform: uppercase;
+			font-size: 40px;
+			margin: 0;
+		}
+		article p {
+			font-size: 25px;
+			margin: 0;
+		}
+	</style>
+</head>
+<body>
+
+	<article>
+		<a href="#">
+			<img src="berat.jpg" alt="Old city of Berat">
+			<div>
+				<h1>Berat</h1>
+				<p>Visit Berat, a beautiful city in Albania!</p>
+			</div>
+		</a>
+	</article>
+	
+</body>
+</html>

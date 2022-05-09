@@ -1,114 +1,179 @@
 /*
-Title: Structured CSS example file for a small project with reused components
-Author: Paul Opitz
-Date: 2021-09-30
+*
+* Title: A basic website
+* Description: Show how HTML and CSS for a basic site
+* Author: Paul Opitz
+* Date: 2022-05-08;
+*
+*
 */
 
-/************ General Styling **************/
+/***************************** General styling for all pages *************************/
+
 body {
-	margin: 0 auto;
-	max-width: 2000px;
+	margin: 0;
 }
 
-h1, h2 {
-	text-align: center;
-}
+/* Navigation */
 
-/************ General Components **********/
-
-/* Nav */
 nav {
+	background-color: aliceblue;
+	display: flex;
+	/* Logo and list of links should be separated */
+	justify-content: space-between;
+	align-items: center;
+	padding: 40px;
+}
+nav img {
+	height: 100px;
+}
+nav ul {
+	/* The list should not have any bullet points */
+	list-style: none;
+	/* The list items should be horizontally aligned */
 	display: flex;
 	justify-content: flex-end;
 	align-items: center;
-	padding: 0 60px;
-	border: 1px solid black;
 }
-nav ul li {
-	display: inline-block; /* List items should be inline */
-}
+
 nav ul li a {
-	display: inline-block;
-	padding: 15px;
-	margin: 15px;
+	color: white;
+	font-size: 24px;
+	margin: 10px;
+	padding: 25px;
+	text-decoration: none;
+	background-color: steelblue;
+	border-radius: 45px; 
+	text-transform: uppercase;
 }
+
 nav ul li a:hover {
-	background-color: lightgrey;
+	background-color: #274775;
 }
+
 
 /* Header */
 header {
-	padding: 60px;
-	height: 350px;
+	height: 500px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	border: 1px solid black;
+	background-image: url("header-background.jpg");
+	background-size: cover;
+	background-position: center;
 }
+header h1 {
+	font-size: 50px;
+	padding: 70px;
+	border-radius: 70px;
+	background-color: rgba(255,255,255,0.4);
+}
+
 
 /* Footer */
 footer {
-	padding: 60px;
 	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	border: 1px solid black;
+	/* All divs have same distance to each other */
+	justify-content: space-evenly;
+	align-items: flex-start;
+	background-color: aliceblue;
+	color: white;
+	padding: 60px;
+}
+footer h2 {
+	font-size: 30px;
+	font-weight: bold;
+	background-color: steelblue;
+	padding: 15px;
+	border-radius: 20px;
+}
+footer p {
+	color: black;
+	padding: 15px;
+	font-size: 20px;
+
+}
+footer p a {
+	color: black;
+	padding: 15px;
+	font-size: 20px;
+	text-decoration: none;
+	border-radius: 20px;
+}
+footer p a:hover {
+	background-color: white;
+}
+/* last-child is a pseudo-class, it selects only the last child of an element */
+footer div:last-child {
+	width: 50%;
 }
 
 
-/************* Home Page *************/
+/***************************** Styling for the home page *************************/
+
+/* Main */
 #home main {
+	padding: 30px;
+	background-color: #a7CFF0;
 	display: flex;
-	justify-content: space-around;
+	justify-content: space-evenly;
 	align-items: center;
+	/* Makes a line break if not enough space */
 	flex-wrap: wrap;
 }
-
-#home header {
-	height: 200px;
-}
-
-#home article {
-	/* Each article should take a third of the given width */
-	width: 33.3%;
-	height: 300px;
-}
-#home article a {
-	border: 1px solid black;
-	height: 100%;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
-#home article a:hover {
-	background-color: lightgrey;
-}
-
-
-/*************** Article Page *************/
-#article main {
-	border: 1px solid black;
-	padding: 60px 15%;
-	column-count: 2;
-	column-gap: 60px;
-}
-#article p {
-	line-height: 1.5;
-}
-#article img {
-	float:left;
+#home main article {
 	margin: 30px;
-	width: 200px;
+}
+
+#home main article a {
+	color: black;
+	text-decoration: none;
+	display: block;
+	border-radius: 50px;
+	/* Do not show content that is bigger */
+	overflow: hidden;
+}
+#home main article a:hover {
+	/* Make the card bigger on hover */
+	transform: scale(1.1);
+}
+
+#home main article img {
+	width: 400px;
+	/* Changes the display type to block */
+	display: block;
+}
+
+#home main article div {
+	width: 400px;
 	height: 200px;
-	display: inline-block;
+	background-color: white;
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+	flex-direction: column;
+	/* Do not add the padding to the total width */
+	box-sizing: border-box;
+	padding: 30px;
 }
-#article .right {
-	float:right;
+
+#home main article h1 {
+	text-transform: uppercase;
+	font-size: 40px;
+	margin: 0;
+}
+
+#home main article p {
+	font-size: 25px;
+	margin: 0;
 }
 
 
 
 
 
+/***************************** Styling for a city page *************************/
 
+#city {
 
+}

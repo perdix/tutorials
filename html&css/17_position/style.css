@@ -1,0 +1,41 @@
+/* With the star operator, we select every element */
+* {
+	/* Every element has got a border for better visualisation */
+	border: 1px solid black;
+	margin: 5px;
+	padding: 80px;
+}
+
+p#relative {
+	background-color: lightgreen;
+	/* With position relative, we can shift the element.
+	The the current position is the start position. */
+	position: relative;
+	left: 50px;
+	top: -100px;
+}
+
+p#absolute {
+	background-color: lightblue;
+	/* 
+		With position absolute the element can be shifted as well
+		But the origin is the next parent with position: relative or 
+		if there is none, the body itself;
+	 */
+	position: absolute;
+	left: 60px;
+	top: 100px;
+}
+
+p#fixed {
+	background-color: red;
+	/* With position:fixed, the element stays fixed. Even on scroll */
+	position: fixed;
+	left: 400px;
+	top: 0px;
+	/* The z-index controls if the element is in the back- or foreground */
+	z-index: -10;
+}
+
+
+
