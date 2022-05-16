@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Functions</title>
+</head>
+<body>
+
+    <h1>Functions are friends for lazy developers</h1>
+    
+</body>
+</html>
+
+
+<script>
+    // Functions are declared
+    function square(number) {
+        return number * number;
+    }
+
+    // and used with given parameters
+    let squaredNumber = square(5);
+    console.log(squaredNumber); // Output: 25
+
+
+    // Functions help to reduce and structure code
+    function createParagraph(text, height) {
+        let p = document.createElement("p");
+        p.style.border = "1px solid black";
+        p.style.margin = "2px";
+        p.style.height = height + "px";
+        p.innerHTML = text;
+        document.body.append(p);
+    }
+
+    for(let i=0; i<100; i++) {
+        createParagraph("Paragraph Nr: " + i, i*10);
+    }
+
+
+
+</script>

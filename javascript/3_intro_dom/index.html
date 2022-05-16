@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>JS DOM</title>
+</head>
+<body>
+	<h1>DOM - Document Object Model</h1>
+	<p>The HTML page consists of many single elements which are connected to each other. The parent of all is the document node.</p>
+
+	<h2 id="example">Example-Node</h2>
+	
+</body>
+</html>
+
+<script>
+	
+	// It is possible to change HTML nodes with JS
+
+	// Find the node
+	let myNode = document.getElementById("example");
+	// Change the content
+	myNode.innerHTML = "This is a new text";
+	// Change the style
+	myNode.style.backgroundColor = "lightblue";
+	myNode.style.fontSize = "40px";
+
+	// We can also create new Nodes
+
+	let anotherParagraph = document.createElement("p");
+	anotherParagraph.innerHTML = "Text of paragraph";
+	// To make it visible the new node must be added to the DOM
+	document.body.append(anotherParagraph);
+
+</script>

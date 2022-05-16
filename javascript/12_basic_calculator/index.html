@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Basic Calculator</title>
+	<style>
+		body {
+			background: linear-gradient(238deg, rgba(21,40,96,1) 17%, rgba(105,201,255,1) 80%);
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			min-height: 100vh;
+		}
+		main {
+			background-color: rgba(255, 255, 255, 0.7);
+			border-radius: 20px;
+			padding: 40px;
+		}
+		ul li:hover{
+			text-decoration: line-through;
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+
+	<main>
+	
+	<h1>Basic Calculator</h1>
+
+	<input type="number" id="number1">
+
+	<select id="operator">
+		<option value="+">+</option>
+		<option value="-">-</option>
+		<option value="*">*</option>
+		<option value="/">/</option>
+	</select>
+
+	<input type="number" id="number2">
+
+	<br><br>
+
+	<button id="calculate">Calculate</button>
+
+	<h2 id="result"></h2>
+
+	<h3>Calculation history</h3>
+	<button id="delete">Delete History</button>
+
+	<ul id="history">
+	</ul>
+
+</main>
+</body>
+</html>
+
+<script>
+
+	// A listener function to delete an item
+	function deleteItem(event) {
+		// Remove the element that is clicked!
+		event.target.remove();
+	}
+
+	// Listener function for delete the history
+	function deleteHistory() {
+		// Set innerHTML to an empty string -> no items anymore
+		document.getElementById("history").innerHTML = "";
+	}
+
+	// Listener function of button click
+	function calculateNumbers() {
+		let n1 = document.getElementById("number1").value;
+		let n2 = document.getElementById("number2").value;
+		let operator = document.getElementById("operator").value;
+		let result;
+
+		if (operator == "+") {
+			result = parseInt(n1) + parseInt(n2);
+		}
+		if (operator == "*") {
+			result = parseInt(n1) * parseInt(n2);
+		}
+		if (operator == "-") {
+			result = parseInt(n1) - parseInt(n2);
+		}
+		if (operator == "/") {
+			result = parseInt(n1) / parseInt(n2);
+		}
+		
+		// Show result
+		let myResult = document.getElementById("result");
+		myResult.innerHTML = "Das Ergebnis ist: " + result;
+
+		// Add to history
+		let resultString = n1 + " " +  operator + " " + n2 + " = " + result;
+		historyList = document.getElementById("history");
+		newItem = document.createElement("li");
+		newItem.addEventListener("click", deleteItem);
+		newItem.innerHTML = resultString;
+		historyList.append(newItem);
+	}
+
+	document.getElementById("calculate").addEventListener("click", calculateNumbers);
+	document.getElementById("delete").addEventListener("click", deleteHistory);
+</script>

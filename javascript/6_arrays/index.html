@@ -3,74 +3,35 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Arrays, Objekte und Funktionen</title>
+	<title>Arrays</title>
 </head>
 <body>
 
-	<h1>Arrays, Objekte und Funktionen</h1>
+	<h1>Arrays can store lots of things</h1>
 
-	<h2 id="size"></h2>
-	<ul id="list"></ul>
-
-	<h2>MyFancyYacht</h2>
-	<p id="now"></p>
-	<p id="later"></p>
+	<h2 id="colors"></h2>
+	<ul id="colorlist"></ul>
 
 </body>
 </html>
 
 
 <script>
-	// Wir arbeiten mit Arrays
-	let ourClass = ["Elis", "Rei", "Anton"];
-	ourClass.push("Jasin");
+	// Arrays are generated with square brackets
+	let allColors = ["red", "green", "blue"];
+	// We can add itmes to the array with the command push
+	allColors.push("orange");
 
-	document.getElementById("size").innerHTML = "Die Klasse 2by hat " + ourClass.length + " Schüler";
+	// We count the items with length
+	document.getElementById("colors").innerHTML = "We have " + allColors.length + " Colors";
 
-	let myList = document.getElementById("list");
-	for (let i=0; i<ourClass.length;i++) {
-		let newItem = document.createElement("li");
-		newItem.innerHTML = ourClass[i];
-		myList.append(newItem);
+	let myList = document.getElementById("colorlist");
+	for (let i=0; i<allColors.length;i++) {
+		let newListItem = document.createElement("li");
+		newListItem.innerHTML = allColors[i];
+		myList.append(newListItem);
 	}
 
-	// Wir arbeiten mit Objekten
-	let myFancyYacht = {};
-	myFancyYacht.length = "55m";
-	myFancyYacht.price = "30000000€";
-	myFancyYacht.owner = "Paul Opitz";
-	myFancyYacht.currentLocation = "Budva";
-	console.log(myFancyYacht);
-	document.getElementById("now").innerHTML = "Current Location: " + myFancyYacht.currentLocation;
-	myFancyYacht.currentLocation = "Monaco";
-	document.getElementById("later").innerHTML = "Current Location: " + myFancyYacht.currentLocation;
-
-	// Wir arbeiten mit Funktionen
-	function addNumbers(a, b) {
-		return a+b;
-	}
-
-	let result = document.createElement("h2");
-	result.innerHTML = "Additionsergebnis von 3 und 5: " + addNumbers(3,5);
-	document.body.append(result);
-
-	function sumNumbers(a, b) {
-		let sum = 0;
-		for (let i = a; i<=b; i++) {
-			sum += i;
-		}
-		return sum;
-	}
-
-	let result2 = document.createElement("h2");
-	result2.innerHTML = "Die Summer zwischen 3 und 5: " + sumNumbers(3,5);
-	document.body.append(result2);
-
-
-	let result3 = document.createElement("h2");
-	let zahl1 = parseInt(window.prompt("Eine Zahl eingeben: "));
-	let zahl2 = parseInt(window.prompt("Eine zweite Zahl eingeben: "));
-	result3.innerHTML = "Die Summer zwischen zwei Zahlen: " + sumNumbers(zahl1, zahl2);
-	document.body.append(result3);
+	
 
 </script>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Objects</title>
+</head>
+<body>
+
+	<h1>Almost everything is an object</h1>
+
+	<h2 id="position"></h2>
+	
+</body>
+</html>
+
+<script>
+	// In JavaScript almost everything is an object.
+	// Like an array, an object is a container for several values.
+	// But with object, each value has got a dedicated key to access the value.
+
+	// We create an object to store all infos for a ship
+	let myShip = {}
+
+	myShip.length = "23m"; //myShip["size"] = "23m" would be equal. But the dot notation is much more common
+	myShip.price = "34000€";
+	myShip.name = "Nautilus";
+	myShip.cabins = 3;
+	myShip.currentPosition = "Kotor";
+
+	// Show the current position
+	document.getElementById("position").innerHTML = "Currently my ship " + myShip.name + " is in: " + myShip.currentPosition;
+
+	// We can also use objects in objects
+	myShip.crew = { "captain": "Aurora", "sailor": "Drini" };
+	// Print the captain
+	console.log(myShip.crew.captain);
+
+
+</script>

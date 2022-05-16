@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Mini-Calculator</title>
+	<style>
+		body {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			min-height: 100vh;
+		}
+		main {
+			background-color: rgb(200,200,200,0.9);
+			padding: 50px;
+		}
+	</style>
+</head>
+<body>
+
+	<main>
+		<h1>Mini-Calculator</h1>
+		<!-- With an input element, the user can write on our website -->
+		<input type="text" id="number1" placeholder="Number 1">
+		<br><br>
+		<input type="text"	id="number2" placeholder="Number 1">
+		<br><br>
+		<button id="addButton">ADD (+)</button>
+		<button id="subtractButton">SUBTRACT (-)</button>
+		<!-- An empty h2 element, we fill it later with the calculated result -->
+		<h2 id="result"></h2>
+	</main>
+
+</body>
+</html>
+
+<script>
+	function add() {
+		// With value, we get what is entered by the user in the input box
+		let n1 = document.getElementById("number1").value;
+		let n2 = document.getElementById("number2").value;	
+		// input content is always text (type string). 
+		// parseInt is used to change the type form string to integer
+		let sum = parseInt(n1) + parseInt(n2);
+		document.getElementById("result").innerHTML = "The result is: " + sum;
+	}
+	function subtract() {
+		// With value, we get what is entered by the user in the input box
+		let n1 = document.getElementById("number1").value;
+		let n2 = document.getElementById("number2").value;	
+		// input content is always text (type string). 
+		// parseInt is used to change the type form string to integer
+		let difference = parseInt(n1) - parseInt(n2);
+		document.getElementById("result").innerHTML = "The result is: " + difference;
+	}
+	
+	document.getElementById("addButton").addEventListener("click", add);
+	document.getElementById("subtractButton").addEventListener("click", subtract);
+
+</script>

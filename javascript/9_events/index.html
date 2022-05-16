@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>JS Events</title>
+	<style>
+		button {
+			padding: 30px;
+		}
+	</style>
+</head>
+<body>
+	<h1>We work with events</h1>
+
+	<button id="myButton">Pleas click here!!</button>
+
+</body>
+</html>
+
+<script>
+
+	// In JS we can react on user events
+
+	// First we need to write a function that should be executed
+	function doSomething() {
+		window.alert("Hallo!");
+	}
+
+	// Then we add an event listener to an specific element. The listener executes our given function if the event signal is given
+	let myButton = document.getElementById("myButton");
+	myButton.addEventListener("click", doSomething);
+
+
+
+
+
+	// We can also react on keyboard events
+	function showColor(event) {
+		if (event.key == "r") {
+			document.body.style.backgroundColor = "red";
+		}
+		if (event.key == "b") {
+			document.body.style.backgroundColor = "blue";
+		}
+	}
+	function makeWhite() {
+		document.body.style.backgroundColor = "white";
+	}
+
+	window.addEventListener("keydown", showColor); // if a user presses a key down
+	window.addEventListener("keyup", makeWhite); // if a user releases the key
+
+</script>

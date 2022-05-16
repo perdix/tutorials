@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Spaceship</title>
+	<style>
+		body {
+			margin: 0;
+			background: linear-gradient(238deg, rgba(21,40,96,1) 17%, rgba(105,201,255,1) 80%);
+			min-height: 100vh;
+			overflow: hidden;
+		}
+		#ufo {
+			width: 80px;
+			position: absolute;
+			left: 0;
+			top: 0;
+		}
+		
+	</style>
+</head>
+
+
+
+<body>
+	<img id="ufo" src="ufo.svg" alt="Ufo">
+</body>
+
+
+</html>
+
+
+<script>
+
+	let posX = document.body.clientHeight / 2;
+	let posY = document.body.clientWidth / 2;
+	let stepSize = 15;
+	let ufo = document.getElementById("ufo");
+
+
+	ufo.style.top = posX + "px";
+	ufo.style.left = posY + "px";
+
+
+	function step(event) {
+		checkBorder();
+
+		if (event.key == "ArrowLeft") {
+			posY = posY - stepSize;
+			ufo.style.top = posX + "px";
+			ufo.style.left = posY + "px";
+		}
+		if (event.key == "ArrowRight") {
+			posY = posY + stepSize;
+			ufo.style.top = posX + "px";
+			ufo.style.left = posY + "px";
+		}
+		if (event.key == "ArrowUp") {
+			posX = posX - stepSize;
+			ufo.style.top = posX + "px";
+			ufo.style.left = posY + "px";
+		}
+		if (event.key == "ArrowDown") {
+			posX = posX + stepSize;
+			ufo.style.top = posX + "px";
+			ufo.style.left = posY + "px";
+		}
+
+	}
+
+	document.body.addEventListener("keydown", step);
+
+	function checkBorder() {
+		if ((posX < 0) || 
+			(posX+90 > document.body.clientHeight) || 
+			(posY < 0) || 
+			(posY+90 > document.body.clientWidth)) {
+			ufo.src = "explosion.svg";
+			document.body.removeEventListener("keydown", step);
+		}
+	}
+
+
+</script>

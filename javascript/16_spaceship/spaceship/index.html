@@ -30,30 +30,21 @@
 			text-align: center;
 			display: none;
 		}
-		h2.steps {
-			color: white;
-			background-color: black;
-			padding: 10px 30px;
-			bottom: 0px;
-			left: 30px;
-			position: absolute;
-			text-transform: uppercase;
-		}
 		h2.fuel {
 			color: white;
 			background-color: black;
-			padding: 10px 30px;
-			bottom: 0px;
-			right: 30px;
+			padding: 20px 60px;
+			bottom: 30px;
+			font-size: 50px;
+			right: 60px;
 			position: absolute;
 			text-transform: uppercase;
 		}
 	</style>
 </head>
 <body>
-	<img src="spaceship.png" alt="" id="ship">
+	<img src="spaceship.svg" alt="" id="ship">
 	<h1 id="info">Game Over</h1>
-	<h2 class="steps">Steps: <span id="count">0</span></h2>
 	<h2 class="fuel">Fuel: <span id="fuel">100</span></h2>
 </body>
 </html>
@@ -65,37 +56,32 @@
 	let posX = document.body.clientHeight / 2;
 	let posY = document.body.clientWidth / 2;
 	let angle = 0;
-	let count = 0;
 	let fuel = 100;
 
 	// First positioning
-	ship.style.top = posX + "px";
-	ship.style.left = posY + "px";
-	ship.style.transform = "rotate(" + angle + "deg)";
+	updateScreen();
 
+	// For each step do
 	function move(event) {
-		
 		if (event.key == "ArrowLeft") {
+			// Change angle to the left (15 is the stepsize)
 			angle = (angle - 15) % 360;
-			ship.style.transform = "rotate(" + angle + "deg)";
-			count++;
 			fuel--;
 		}
 		if (event.key == "ArrowRight") {
+			// Change angle to the right
 			angle = (angle + 15) % 360;
-			ship.style.transform = "rotate(" + angle + "deg)";
-			count++;
 			fuel--;
 		}
 		if (event.key == "ArrowUp") {
+			// Calculate the right values according to the current angle
+			// Convert angle to Radian
 			radAngle = angle * Math.PI / 180;
+			// Get x and y shift with cosinus and sinus (10 is just a stepsize and can be adapted)
 			let x = Math.round(Math.cos(radAngle) * 10);
 			let y = Math.round(Math.sin(radAngle) * 10);
 			posX = posX - x;
 			posY = posY + y;
-			ship.style.top = posX + "px";
-			ship.style.left = posY + "px";
-			count++;
 			fuel--;
 		}
 		if (event.key == "ArrowDown") {
@@ -104,7 +90,6 @@
 			let y = Math.round(Math.sin(radAngle) * 10);
 			posX = posX + x;
 			posY = posY - y;
-			count++;
 			fuel--;
 		}
 		checkBorder();
@@ -112,6 +97,7 @@
 		updateScreen();
 	}
 
+	// Register a keydown handler
 	document.body.addEventListener("keydown", move);
 
 	function checkFuel() {
@@ -123,19 +109,24 @@
 	}
 
 	function checkBorder() {
+		// Check if the ship is somewhere at the border
 		if ((posX < 0) ||  (posX+90 > document.body.clientHeight) || (posY < 0) || (posY+80 > document.body.clientWidth)) {
-			ship.src = "explosion.png";
+			// Change image
+			ship.src = "explosion.svg";
+			// Remove listener that the ship can't be moved!
 			document.body.removeEventListener("keydown", move);
+			// Set rotation to zero to show explosion in default rotation
+			angle = 0
 			document.getElementById("info").style.display = "block";
 		}
 	}
 
 	function updateScreen() {
-		// ship
+		// Update all the styles according to the variables
 		ship.style.top = posX + "px";
 		ship.style.left = posY + "px";
-		// boxes
-		document.getElementById("count").innerHTML = count;
+		ship.style.transform = "rotate(" + angle + "deg)";
+		// Update the fuel box
 		document.getElementById("fuel").innerHTML = fuel;
 	}
 

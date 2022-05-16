@@ -6,6 +6,7 @@
 	</title>
 	<style type="text/css">
 		body {
+			/* Make the body exactly like the browser size */
 			height: 100vh;
 			width: 100vw;
 			overflow: hidden;
@@ -14,23 +15,29 @@
 			position: relative;
 			background: linear-gradient(90deg, rgba(0,10,33,1) 0%, rgba(37,54,108,1) 69%, rgba(16,79,113,1) 100%);
 			background-attachment: fixed;
-
-
+			display: flex;
+			justify-content: center;
+			align-items: center;
 		}
 		img {
 			position: absolute;
 		}
-
+		h1 {
+			font-size: 150px;
+			color: #f0cb37;
+		}
 	</style>
 </head>
 <body>
-
+	<h1>Starry Night</h1>
 </body>
 </html>
 <script type="text/javascript">
+	// Create 100 img tags and use random attributes
 	for (let i=0; i<100; i++) {
 		let img = document.createElement('img');
 		img.src = "star.png";
+		// Generate random sizes
 		let x = Math.floor(Math.random() * 100);    
 		let y = Math.floor(Math.random() * 100);
 		let size = Math.floor(Math.random() * 100);
@@ -40,7 +47,5 @@
 		img.style.width = size + "px";
 		img.style.transform = "rotate(" + rotation + "deg)"; 
 		document.body.append(img);
-
 	}
-
 </script>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Basic Task-App</title>
+	<style>
+		body {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			min-height: 100vh;
+		}
+		main {
+			background-color: rgb(200,200,200,0.9);
+			padding: 50px;
+		}
+		ul li {
+			background-color: white;
+			padding: 10px;
+			margin: 3px;
+		}
+		ul li:hover {
+			cursor: pointer;
+			text-decoration: line-through;
+		}
+	</style>
+</head>
+<body>
+
+	<main>
+		<h1>Basic Task App</h1>
+		<h2>What do I need to do?</h2>
+		<div>
+			<input type="text" id="task">
+			<button id="newTaskButton">Add another task</button>
+		</div>
+		<h3>No. of tasks: <span id="counter">0</span></h3>	
+		<ul id="tasklist"></ul>
+	</main>
+	
+</body>
+</html>
+
+
+<script>
+	let tasklist = document.getElementById("tasklist");
+	let count = 0;
+	
+	function newTask() {
+		let task = document.getElementById("task").value;
+		// Add new item to list
+		let taskItem = document.createElement("li");
+		taskItem.innerHTML = task;
+		taskItem.addEventListener("click", checkTask);
+		tasklist.append(taskItem);
+		// Increase counter
+		count++;
+		// Update counter
+		document.getElementById("counter").innerHTML = count;
+	}
+	document.getElementById("newTaskButton").addEventListener("click", newTask);
+
+
+	function checkTask(event) {
+		// event.target is the element where we clicked at!
+		event.target.style.textDecoration = "line-through";
+	}
+
+</script>

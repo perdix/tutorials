@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>JS Loops</title>
+</head>
+<body>
+	
+	<h1>Loops are for lazy programmers</h1>
+
+</body>
+</html>
+
+
+<script>
+	
+	// Loops help us to do things faster
+
+	// Let's add 100 paragraphs to our HTML page
+	for (let i=0; i<100; i++) {
+		let myParagraph = document.createElement("p");
+		myParagraph.innerHTML = "Paragraph: " + i;
+		myParagraph.style.backgroundColor = "lightgreen";
+		myParagraph.style.padding = "15px";
+		myParagraph.style.margin = "5px";
+		document.body.append(myParagraph);
+	}
+
+</script>

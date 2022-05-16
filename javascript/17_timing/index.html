@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>JS Timing</title>
+</head>
+<body>
+
+	<h1>Timing with JS</h1>
+
+	<h2>JS Timeout</h2>
+	<p id="once">setTimeout executes a function after a given amount of time</p>
+
+	<h2>JS Interval</h2>
+	<p id="repeat">setInterval executes a function endlessly given an interval</p>
+	
+</body>
+</html>
+
+
+
+<script>
+
+
+	function changeToBlue() {
+		document.getElementById("once").style.backgroundColor = "blue";
+	}
+
+	function changeColor() {
+		if (document.getElementById("repeat").style.backgroundColor == "green") {
+			document.getElementById("repeat").style.backgroundColor = "orange";
+		} else {
+			document.getElementById("repeat").style.backgroundColor = "green";
+		}
+	}
+
+	// The time is given in milliseconds. So this executes after 5s
+	setTimeout(changeToBlue, 5000);
+
+
+	// This executes the function every half second
+	setInterval(changeColor, 500);
+
+
+
+	
+
+
+
+
+
+</script>

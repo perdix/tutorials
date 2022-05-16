@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Random number guesser</title>
+	<style>
+		body {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			min-height: 100vh;
+		}	
+		main {
+			background-color: rgb(200,200,200,0.9);
+			padding: 50px;
+		}
+		#info {
+			padding: 30px;
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+
+	<main>
+		<h1>Random number guesser</h1>
+		<h2>Please enter a number between 0 and 99!</h2>
+		<input type="number" id="number">
+		<button id="guess">Guess</button>
+		<h3 id="info"></h3>
+	</main>
+
+</body>
+</html>
+
+<script>
+	// const can be used instead of let for a variable that ist not be changed anymore
+	const randomNumber = Math.floor(Math.random() * 100);
+
+	function checkNumber() {
+		let infoBox = document.getElementById("info");
+		guessedNumber = parseInt(document.getElementById("number").value);
+		if (guessedNumber < randomNumber) {
+			infoBox.innerHTML = "Too low, guess higher!";
+		} else if (guessedNumber > randomNumber) {
+			infoBox.innerHTML = "Too high, guess lower!";
+		} else {
+			infoBox.innerHTML = "Yes! You found the right number!";
+			infoBox.style.backgroundColor = "lightgreen";
+			infoBox.style.border = "3px dashed green";
+		}
+	}
+
+	function reactOnEnter(event) {
+		if (event.key == "Enter") {
+			checkNumber();
+		}
+	}
+
+	document.getElementById("guess").addEventListener("click", checkNumber);
+	// Add add listener for the input box, if you press enter the guess should be submitted as well
+	document.getElementById("number").addEventListener("keydown", reactOnEnter)
+
+
+</script>

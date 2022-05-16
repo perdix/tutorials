@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Random</title>
+</head>
+<body>
+	<h1>We generate random numbers</h1>
+
+	<h2 id="float"></h2>
+
+	<h2 id="int"></h2>
+
+
+	<a href="https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/Math/random">Further infos about random numbers</a>
+</body>
+</html>
+
+<script>
+	
+	// Generate a random float number between 0 and 1
+	document.getElementById("float").innerHTML = Math.random();
+
+	// To generate random integers we can combine methods
+	// Math.floor rounds a number to the next lower integer
+	// As a result we have a random integer between 0 and 9
+	document.getElementById("int").innerHTML = Math.floor(Math.random() * 10);
+
+</script>
