@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Anonymous Functions</title>
+</head>
+<body>
+	<h1>Anonymous Functions</h1>
+	<button id="myButton1">Click here - named function</button>
+	<button id="myButton2">Click here - anonymous function</button>
+	<button id="myButton3">Click here - anonymous arrow function</button>
+</body>
+</html>
+
+
+<script>
+	// Anonymous functions are functions that do no have a name.
+	// There are written in the place where there are used
+
+	// Adds an event listener with a name function that can be used a several places
+	function showAlert() {
+		window.alert("Hello");
+	}
+	document.getElementById("mybutton1").addEventListener("click", showAlert)
+
+	// Adds an event listener with an anonymous function
+	// Fhe function is written in place and has no name
+	document.getElementById("mybutton2").addEventListener("click", function() {
+		window.alert();
+	});
+
+	// Adds an event listener with an anoynmous arrow function
+	// This is a vey short and compact way to write a function: Input => Output
+	document.getElementById("mybutton2").addEventListener("click", () => window.alert());
+
+
+</script>

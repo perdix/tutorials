@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Todo List</title>
+	<style>
+		body {
+			background: linear-gradient(238deg, rgba(21,40,96,1) 17%, rgba(105,201,255,1) 80%);
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			min-height: 100vh;
+		}
+		main {
+			background-color: rgba(255, 255, 255, 0.7);
+			border-radius: 30px;
+			padding: 60px;
+		}
+		input {
+			padding:  5px 10px;
+		}
+		button {
+			padding:  5px 10px;
+		}
+		ul li:hover{
+			text-decoration: line-through;
+			cursor: pointer;
+		}
+		p {
+			margin: 5px;
+			padding: 5px;
+			background-color: white;
+		}
+	</style>
+</head>
+<body>
+	<main>
+		<h1>Todo-List</h1>
+		<input type="text" id="newTask" placeholder="Add new task">
+		<button id="add">Add</button>
+
+		<ul id="tasks"></ul>
+
+		<hr>
+		<p id="open"></p>
+		<p id="closed"></p>
+		<button id="delete">Delete all tasks</button>
+	</main>
+</body>
+</html>
+
+<script>
+	/* 
+	 * Title: Todo app with persistence
+     * Date: 202-05-17
+     * Author: Paul Opitz
+	 * This mini-app serves mainly to demonstrate the separation of view and model and storage
+     *
+     */
+	
+	// the main model
+	let tasks = [];
+
+	function updateStorage() {
+		localStorage.setItem("tasks", JSON.stringify(tasks));
+	}
+
+	function updateView() {
+		// Updates task list
+		let taskList = document.getElementById("tasks");
+		taskList.innerHTML = "";
+		for (let i=0; i<tasks.length; i++) {
+			let item = document.createElement("li");
+			item.addEventListener("click", checkItem);
+			item.innerHTML = tasks[i].text;
+			if (tasks[i].status != "open") {
+				item.style.textDecoration = "line-through";
+			}
+			taskList.append(item);
+		}
+		// Updates counter view
+		document.getElementById("open").innerHTML = "# of open tasks: " + tasks.filter(i => i.status == "open").length;
+		document.getElementById("closed").innerHTML = "# of closed tasks: " + tasks.filter(i => i.status == "closed").length;
+	}
+
+	// A listener function to check an item
+	function checkItem(event) {
+		let currentCalcString = event.target.innerHTML;
+		let index = tasks.map(i=>i.text).indexOf(currentCalcString);
+		if (tasks[index].status == "open") {
+			tasks[index].status = "closed";
+		} else {
+			tasks[index].status = "open";
+		}
+		updateStorage();
+		updateView();
+		if ((tasks.length == tasks.filter(i => i.status == "closed").length) && (tasks.length > 0)) {
+			alert("Super, du bist fertig!");
+		}
+	}
+	
+	// Listener for the add button
+	document.getElementById("add").addEventListener("click", function() {
+		let content = document.getElementById("newTask").value;
+		tasks.push({"text": content, "status": "open"});
+		updateStorage();
+		updateView();
+	});
+
+	// Listener for delete all
+	document.getElementById("delete").addEventListener("click", function() {
+		tasks = [];
+		updateStorage();
+		updateView();
+	});
+
+	// Listener for page reload
+	document.addEventListener("DOMContentLoaded", function() {
+		tasks = JSON.parse(localStorage.getItem("tasks"));
+		if (tasks == null) {
+			tasks = [];
+		}
+		updateView();
+	});
+	
+</script>

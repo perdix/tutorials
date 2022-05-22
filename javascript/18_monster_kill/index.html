@@ -5,48 +5,124 @@
 	<meta charset="utf-8">
 	<title>Monster-Game</title>
 	<style type="text/css">
+		@keyframes show {
+			0% {
+				transform: scale(0.1);
+			}
+			100% {
+				transform: scale(5);
+			}
+		}
 		body {
-			background-image: url("bg.jpg");
-			background-size: cover;
-			background-position: center;
-			min-height: 100vh;
+			position: relative;
+			background: linear-gradient(243deg, rgba(40,71,117,1) 25%, rgba(149,226,252,1) 100%);
+			background-attachment: fixed;
+			overflow: hidden;
+			height: 100vh;
+			width: 100vw;
 			cursor: crosshair;
+			display: flex;
+			justify-content: center;
+			align-items: center;
 		}
 		img {
 			position: absolute;
+			animation-name: show;
+			animation-fill-mode: forwards;
+  			
 		}
-		h1 {
+		#kills {
+			position: absolute;
+			bottom: 15px;
+			left: 30px;
+			background-color: black;
+			color: white;
+			padding: 30px;
+		}
+		#timer {
+			position: absolute;
+			bottom: 15px;
+			right: 30px;
+			background-color: black;
+			color: white;
+			padding: 30px;
+		}
+		#message {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			background-color: white;
+			color: black;
+			padding: 50px;
+			font-size: 70px;
 			text-align: center;
 		}
 	</style>
 </head>
 
 <body>
-	<h1 id="counter"></h1>
+	<h2 id="kills">Killed: 0</h1>
+	<h2 id="message">Kill at least 15 monsters to survive</h2>
+	<h2 id="timer">Time to survive: 15s</h2>
 </body>
 
 </html>
 <script type="text/javascript">
-	let counter = 0;
+	let monsters = 0;
+	let kills = 0;
+	let seconds = 15
 
 	function killMonster(event) {
 		event.target.remove();
-		counter++;
-		document.getElementById("counter").innerHTML = counter;
+		kills++;
+		document.getElementById("kills").innerHTML =  "Killed: " + kills;
 	}
 
-	for (let i=0; i<25;i++) {
+	function addMonster() {
+		monsters++;
 		let img = document.createElement("img");
-		img.src = "monster.png";
-		img.style.width = "100px";
-		let x = Math.round(Math.random()*100);
-		let y = Math.round(Math.random()*100);
+		img.src = "monster.svg";
+		// Create random size and position and show speed
+		let x = Math.floor(Math.random()*100);
+		let y = Math.floor(Math.random()*100);
+		let speed = Math.floor(Math.random()*10 + 1);
+		let size = Math.floor(Math.random()*150 + 50);
 		img.style.left = x + "%";
 		img.style.top = y + "%";
+		img.style.width = size + "px";
+		img.style.animationDuration = speed + "s";
 		img.addEventListener("click", killMonster);
 		document.body.append(img);
 	}
 
-	setTimeout(function() {}, 1000);
+	// Adds a monster every second
+	let monsterId = setInterval(addMonster, 700);
+
+	// Countdown 
+	let countdownId = setInterval(() => {
+		if (seconds >= 0) {
+			seconds--;
+			document.getElementById("timer").innerHTML = "Time left: " + seconds + "s";
+		} else {
+			clearInterval(intervalId);
+		}
+		
+	}, 1000);
+
+	function stopIt() {
+		clearInterval(monsterId);
+		clearInterval(countdownId);
+		document.getElementById("message").style.zIndex = "100";
+		if (kills >= 15) {
+			document.getElementById("message").innerHTML = "Great job! Your survived!";
+		} else {
+			document.getElementById("message").innerHTML = "Oh no! Looks like the monsters got you!";
+		}
+	}
+
+	// Stops it after the amount of seconds
+	setTimeout(stopIt, 15000);
+
 
 </script>

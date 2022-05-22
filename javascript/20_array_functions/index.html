@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Array Functions</title>
+</head>
+<body>
+	<h1>Helpful functions to deal with arrays</h1>
+	<a href="https://www.freecodecamp.org/news/javascript-map-reduce-and-filter-explained-with-examples/">Read more</a>
+
+
+	<h2>The map function</h2>
+	<p>Creates a new array from a given one. You can decide how!</p>
+
+	<h2>The filter function</h2>
+	<p>Creates a filtered array. You decide which items are filtered</p>
+
+	<h2>The reduce function</h2>
+	<p>Creates a single item from a given array. You decide how!</p>
+	
+</body>
+</html>
+
+
+<script>
+	// Map
+	let startA = [1,2,3,4];
+	let resultA = startA.map(i => i*2); // result is [2,4,6,8] 
+	console.log(resultA);
+
+	// Filter applies a condition! If the condition is true, the element is kept
+	let startB = [1,2,3,4];
+	let resultB = startB.filter(i => i%2 == 0); // result is [2,4] 
+	console.log(resultB);
+
+	// Reduce aggregates the array. It iterates over it and applies the given function to the previos value and the new item. That's why you need to give an extra initial value
+	let startC = [1,2,3,4];
+	let resultC = startC.reduce((res, i) => res+i, 0); // result is 10 
+	console.log(resultC);
+</script>

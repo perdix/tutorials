@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Corinthia&family=Cutive+Mono&family=Libre+Baskerville&family=Open+Sans:wght@300&family=Raleway:wght@200&family=Roboto+Slab:wght@100&display=swap');
+
+body {
+	min-height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: 0;
+	background-image: url("background.jpg");
+	background-size: cover;
+	background-position: center;
+}
+
+
+.card {
+	border: 30px double rgb(199, 74, 101);
+	padding: 70px;
+	color: white;
+	border-radius: 40px;
+	background: linear-gradient(308deg, rgba(236,131,78,0.6416181144067796) 28%, rgba(171,29,85,0.7320135946327684) 100%);
+	transition: all 4s;
+}
+
+.card:hover {
+	transform: scale(1.5) rotate(30deg);
+	transition:all 4s;
+}
+
+
+h1, h2, p {
+	font-family: "Raleway";
+}
