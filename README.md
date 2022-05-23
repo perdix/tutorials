@@ -15,16 +15,31 @@ Useful links:
 * https://every-layout.dev/
 
 ## JavaScript
-Useful links:
+
+### Useful links:
 * https://javascript.info/
 * https://eloquentjavascript.net/index.html
 * https://apipheny.io/free-api/
+
+### Examples to add:
+* Memory game
+* Tic Tac Toe
+* Canvas
+* JS Slider
+* JS Animations
 
 ## PHP
 Useful links:
 * https://phptherightway.com/
 * https://www.php-einfach.de/mysql-tutorial/daten-ausgeben/
 
+### Examples to add:
+* Classes and objects
+* PDO Joined Queries
+* Pagination
+* PHP Mailer
+* Include external libraries
+* How to for composer
 
 ## Python
 Useful links:

@@ -20,6 +20,9 @@
 			background-position: center;
 			background-size: cover;
 			position: relative;
+			display: flex;
+			justify-content: center;
+			align-items: center;
 		}
 		#rocket {
 			position: absolute;
@@ -28,12 +31,18 @@
 			width: 100px;
 			transform: rotate(50deg);
 		}
+		h1 {
+			color: white;
+			font-size: 70px;
+			display: none;
+		}
 	</style>
 </head>
 <body>
 
 	<main>
 		<img src="spaceship.png" alt="" id="rocket">
+		<h1 id="message">Yes, you found the rocket!</h1>
 	</main>
 	
 </body>
@@ -41,9 +50,11 @@
 
 
 <script>
+	// If clicked on the PNG, a shadow appears!
+	// The idea is to extent this game with several items, so several things can be found!
 	function findMe(event) {
 		event.target.style.filter = "drop-shadow(0 0 2rem white)";
+		document.getElementById("message").style.display = "block";
 	}
-
 	document.getElementById("rocket").addEventListener("click", findMe);
 </script>
