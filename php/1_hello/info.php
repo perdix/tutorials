@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
 
 <head>
     <meta charset="utf-8">
@@ -8,7 +8,7 @@
 </head>
 
 <body>
-   <?php phpinfo(); ?> // Ausgabe der installierten PHP-Version am Server mit vielen zusätzlichen Details
+   <?php phpinfo(); ?> // See which PHP version is installed and which addons are available on your server!
 </body>
 
 </html>

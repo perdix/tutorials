@@ -1,27 +1,3 @@
-<?php
-
-// Specify full destination filename
-
-
-if(isset($_POST["submit"])) {
-	// Check if file already exists
-
-	$target_file = "uploads/" . "background.jpg";
-
-
-    // Move file from temporary folder
-    if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
-    	echo "The file has been uploaded.";
-	} else {
-	echo "Sorry, there was an error uploading your file.";
-	}
-	
-}
-
-?>
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -31,22 +7,14 @@ if(isset($_POST["submit"])) {
 	<style>
 
 		body {
-		
-
-			background-image: url("uploads/background.jpg");
-			background-position: center;
-			background-size: cover;
 			display: flex;
 			justify-content: center;
 			align-items: center;
 			min-height: 100vh;
-			overflow: hidden;
 		}
-
 		div {
-			background-color: rgba(255,255,255,0.6);
+			background-color: rgba(200,200,200);
 			padding: 100px;
-			border-radius: 20px;
 		}
 		input {
 			padding: 10px;
@@ -59,19 +27,40 @@ if(isset($_POST["submit"])) {
 <body>
 
 	<div>
-		<h1>Image Upload</h1>
+		<h1>File Upload</h1>
+		<!-- if we use the file input, we need to give the enctype attribut! -->
 		<form action="index.php" method="POST" enctype="multipart/form-data">
 			<input type="file" name="fileToUpload" id="fileToUpload">
 			<br>
-			<input type="submit" value="Upload Image" name="submit">
+			<input type="submit" value="Upload image" name="submit">
 		</form>
 	</div>
+
+	<?php
+
+		if(isset($_POST["submit"])) {
+			
+			// Hav a detailed look on the sent $_FILES arrayx
+			echo "<pre>";
+			var_dump($_FILES);
+			echo "</pre>";
+
+
+			// The full name of the new file (how it should be named and where it should be saved)
+			// Make sure you have writing rights on the folder you specify!
+			$target_file = "uploads/" . "background.jpg";
+
+		    // Move file from the temporary folder to the path you have given
+		    if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
+		    	echo "The file has been uploaded.";
+			} else {
+				echo "Sorry, there was an error uploading your file.";
+			}
+			
+		}
+
+	?>
 	
-
-
-
-
-
 
 </body>
 </html>
