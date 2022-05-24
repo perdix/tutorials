@@ -1,13 +1,11 @@
 <?php
+
 	if (isset($_POST["submit"])) {
-
-		//echo "<pre>";
-		//var_dump($_FILES);
-		//echo "</pre>";
-
 		$tmp_image = $_FILES["uploadedImage"]["tmp_name"];
-		$fixed_image = "uploads/" . $_FILES["uploadedImage"]["name"];
-		move_uploaded_file($tmp_image, $fixed_image);
+		// uploads is the folder where to store all uploaded images
+	    // Make sure this folder is already there and has got writing rights!
+		$saved_image = "uploads/" . $_FILES["uploadedImage"]["name"];
+		move_uploaded_file($tmp_image, $saved_image);
 	}
 ?>
 
@@ -15,7 +13,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
+	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Image Share</title>
 	<link rel="stylesheet" href="style.css">
@@ -35,16 +33,13 @@
 <main>
 
 	<?php
-
-		$folder = "uploads";
-		$list_of_images = scandir($folder);
-		array_shift($list_of_images);
-		array_shift($list_of_images);
+		// Get all images of the uploads folder
+		$list_of_images = glob('uploads/*.{jpeg,gif,png}', GLOB_BRACE);
 		$count = count($list_of_images);
-
-		// Ausgabe der Bilder
+		// Show all images
 		for ($i=0; $i < $count; $i++) { 
-			echo "<a download href='uploads/". $list_of_images[$i] ."'> <img src='uploads/" . $list_of_images[$i] . "' alt='uploadedImage'></a>";
+			// Add the download attribute to directly download the images on click
+			echo "<a download href='". $list_of_images[$i] ."'> <img src='" . $list_of_images[$i] . "' alt='uploadedImage'></a>";
 		}
 
 	?>

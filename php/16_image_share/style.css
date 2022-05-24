@@ -1,9 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Libre+Baskerville&family=Merriweather:wght@300&family=Roboto:wght@300&display=swap');
-
 
 body {
 	margin: 0;
-	font-family: "Merriweather";
 }
 
 header {
@@ -11,7 +8,7 @@ header {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	background: linear-gradient(257deg, rgba(85,111,165,1) 0%, rgba(124,175,174,1) 100%);
+	background-color: lightgrey;
 	padding: 60px;
 }
 
@@ -30,7 +27,7 @@ main {
 	justify-content: space-between;
 	align-items: center;
 	flex-wrap: wrap;
-	gap: 30px;
+	gap: 20px;
 }
 
 main img {

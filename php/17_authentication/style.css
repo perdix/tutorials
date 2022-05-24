@@ -1,0 +1,12 @@
+body {
+	margin: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+}
+
+main {
+	padding: 70px;
+	background-color: lightgrey;
+}

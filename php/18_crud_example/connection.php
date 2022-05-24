@@ -10,7 +10,7 @@
         $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     }
     catch(PDOException $e) {
-        echo "<p>Es konnte keine Verbindung zur Datenbank hergestellt werden: " . $e->getMessage() . "</p>";
+        echo "<p>No connection possible: " . $e->getMessage() . "</p>";
     }
 
 ?>

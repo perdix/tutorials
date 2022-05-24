@@ -1,3 +1,25 @@
+<?php
+
+include_once("connection.php");
+
+if (isset($_POST['submit'])) {
+	$name = $_POST['name'];
+	$amount = $_POST['amount'];
+	$sql = "INSERT INTO items (name, amount) VALUES (?, ?)";
+	$statement = $connection->prepare($sql);
+	$statement->execute([$name, $amount]);
+}
+
+// Execute a delete statement if the delete form is submitted
+if (isset($_POST['deleteAll'])) {
+	$sql = "DELETE FROM items";
+	$statement = $connection->prepare($sql);
+	$statement->execute();
+}
+
+?>
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -34,7 +56,7 @@
 	<main>
 	<header>
 		<h1>Shopping list</h1>
-		<form action="index.php" action="POST">
+		<form action="index.php" method="POST">
 			<button type="submit" name="deleteAll"><span class="material-symbols-outlined">delete_sweep</span></button>
 		</form>
 	</header>
@@ -51,7 +73,12 @@
 
 
 	<ul>
-		<li>5kg of Butter</li>
+		<?php
+			$sql = "SELECT * FROM items";
+			foreach ($connection->query($sql) as $row) {
+	    		echo "<li>" . $row["amount"] . " of " . $row["name"] . "</li>";
+			}
+		?>
 	</ul>
 
 	</main>
