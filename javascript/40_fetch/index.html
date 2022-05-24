@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>JS Fetch</title>
+</head>
+<body>
+
+	<h1>JS Fetch</h1>
+
+	<h2 id="info"></h2>
+	
+</body>
+</html>
+
+<script>
+	
+	// With fetch, it is possible to make an ansynchronous HTTP call
+	// Both GET and POST is possible
+	// Most of the time, a JSON is returned
+	// Use console.log to analyze the JSON object for its structure
+	// .then is called a promise! It enables us to write code which will be executed after the call returned
+	fetch("https://catfact.ninja/fact")
+		.then(response => response.json())
+	    .then(data => {
+	    	console.log(data);
+	    	document.getElementById("info").innerHTML = data.fact;
+	    });
+
+
+</script>

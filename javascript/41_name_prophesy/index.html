@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Name Prophesy</title>
+	<style>
+		body {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			min-height: 100vh;
+		}
+		main {
+			background-color: lightgrey;
+			padding: 50px;
+		}
+	</style>
+</head>
+<body>
+	<main>
+		<h1>Name Prophesy</h1>
+		<p>Tell me your name and I will tell you who you are</p>
+		<input type="text" id="name" placeholder="Your name">	
+		<button id="analyze">Analyze me</button>
+		<p id="result"></p>
+	</main>
+
+	
+</body>
+</html>
+
+<script>
+	// Add the event listener for the button
+	document.getElementById("analyze").addEventListener("click", function() {
+
+		// Get the input from the user
+		let name = document.getElementById("name").value;
+		// Promise.all waits until every fetch is done, the result is then given as array
+		Promise.all([
+		  fetch("https://api.agify.io?name=" + name),
+		  fetch("https://api.genderize.io?name=" + name),
+		  fetch("https://api.nationalize.io?name=" + name)
+		]).then(responses =>
+		  Promise.all(responses.map(response => response.json()))
+		).then(data => {
+			console.log(data);
+		  	document.getElementById("result").innerHTML = "Hey " + name + ", you are " + data[0].age + " years old, your gender is " + data[1].gender + " and you are maybe living in " + data[2].country[0].country_id;
+		}).catch(err =>
+		  console.log(err)
+		);
+	});
+</script>
