@@ -3,64 +3,87 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Random number guesser</title>
+	<title>Random Number Guesser</title>
 	<style>
+		@keyframes winner {
+			0% {
+				background: grlightgreeneen;
+			}
+			50% {
+				background: green;
+			}
+			100% {
+				background: lightgreen;
+			}
+		}
+		.win {
+			animation-name: winner;
+			animation-duration: 1s;
+			animation-iteration-count: infinite;
+		}
 		body {
 			display: flex;
 			justify-content: center;
 			align-items: center;
 			min-height: 100vh;
-		}	
-		main {
-			background-color: rgb(200,200,200,0.9);
-			padding: 50px;
 		}
-		#info {
-			padding: 30px;
-			text-align: center;
+		main {
+			background-color: lightgrey;
+			padding: 80px;
+		}
+		input {
+			width: 200px;
 		}
 	</style>
 </head>
 <body>
 
 	<main>
-		<h1>Random number guesser</h1>
-		<h2>Please enter a number between 0 and 99!</h2>
-		<input type="number" id="number">
-		<button id="guess">Guess</button>
-		<h3 id="info"></h3>
+		<h1>Guess a number!</h1>
+		<h2 id="counter"></h2>
+		<input type="number" id="number" placeholder="Insert a number" min="1" max="100">
+		<button id="guess">Guess now!</button>
+		<h2 id="message"></h2>
 	</main>
-
+	
 </body>
 </html>
 
+
 <script>
-	// const can be used instead of let for a variable that ist not be changed anymore
-	const randomNumber = Math.floor(Math.random() * 100);
+	let randomNumber = Math.ceil(Math.random() * 100);
+	let count = 0;
+	let limit = 10;
 
-	function checkNumber() {
-		let infoBox = document.getElementById("info");
-		guessedNumber = parseInt(document.getElementById("number").value);
-		if (guessedNumber < randomNumber) {
-			infoBox.innerHTML = "Too low, guess higher!";
-		} else if (guessedNumber > randomNumber) {
-			infoBox.innerHTML = "Too high, guess lower!";
+	function guessNumber() {
+		count++;
+		document.getElementById("counter").innerHTML = "Counter: " + count;
+		if (count <= limit) {
+			let guessedNumber = parseInt(document.getElementById("number").value);
+			if (guessedNumber < randomNumber) {
+				document.getElementById("message").innerHTML = "The number is bigger!";
+			} else if (guessedNumber > randomNumber) {
+				document.getElementById("message").innerHTML = "The number is smaller!";
+			} else if (guessedNumber == randomNumber) {
+				document.body.innerHTML = "";
+				let h1 = document.createElement("h1");
+				h1.innerHTML = "Hooray! You made it!";
+				h1.style.fontSize = "150px";
+				document.body.append(h1);
+				document.body.classList.add("win");
+			}
 		} else {
-			infoBox.innerHTML = "Yes! You found the right number!";
-			infoBox.style.backgroundColor = "lightgreen";
-			infoBox.style.border = "3px dashed green";
+			document.body.innerHTML = "";
+			let h1 = document.createElement("h1");
+			h1.innerHTML = "Game Over!";
+			h1.style.fontSize = "150px";
+			document.body.append(h1);
+			document.body.style.backgroundColor = "black";
 		}
+
+
 	}
 
-	function reactOnEnter(event) {
-		if (event.key == "Enter") {
-			checkNumber();
-		}
-	}
-
-	document.getElementById("guess").addEventListener("click", checkNumber);
-	// Add add listener for the input box, if you press enter the guess should be submitted as well
-	document.getElementById("number").addEventListener("keydown", reactOnEnter)
-
-
+	document.getElementById("guess").addEventListener("click", guessNumber);
+	
 </script>
