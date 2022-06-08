@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>JS TimeTracking</title>
+</head>
+<body>
+
+	<h1>TimeTracking</h1>
+
+	<h2>We use setInterval to update a object every 3 seconds</h2>
+
+	<h3 id="showTime"></h3>
+	
+</body>
+</html>
+
+<script>
+
+	// Our tracker object: Load it from local storage or initialize it if not found
+	// If you want to track different categories, just extend the tracking object as you want
+	let tracker =  localStorage.getItem("tracker") != null ? JSON.parse(localStorage.getItem("tracker")) : {"usedTime" : 0};
+
+	// The function which actually updates tracking object
+	// If you really need to have the tracking stored in a database, you can add a fetch call to send the JSON to an API which updates the DB accordingly!
+	function timer() {
+		// Only track if document is open
+		if (!document.hidden) {
+			tracker = { "usedTime" : tracker.usedTime + 3}
+			updateElement();
+			// Save it to local storage
+			localStorage.setItem("tracker", JSON.stringify(tracker));
+		}
+	}
+
+	function updateElement() {
+		document.getElementById("showTime").innerHTML = "You spent " + tracker.usedTime + "s on this page!";
+	}
+
+	// Start the tracking timer every 3 seconds
+	window.setInterval(timer, 3000);
+	
+	// Update the element on start
+	updateElement();
+
+</script>	

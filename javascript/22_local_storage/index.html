@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>JS Local Storage</title>
+</head>
+<body>
+
+	<h1>Local Storage</h1>
+
+	<h2>Similar to a cookie, we can store any JS object in the browser.</h2>
+	
+</body>
+</html>
+
+<script>
+
+	// Create any object you want
+	let ship = { "name": "Nautilus", "size": "5m"};
+	
+	// To save it, we must first convert the object to JSON (JS object as string)
+	// We need to set the object and create a key for it
+	localStorage.setItem("ship", JSON.stringify(ship));
+
+	// To load it, we give the key and after loading, we convert it back to an object
+	let storedShip = JSON.parse(localStorage.getItem("ship"));
+	console.log(storedShip);
+
+
+</script>	
