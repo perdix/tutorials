@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="style.css">
+	<title>Document</title>
+</head>
+<body>
+
+	<div class="wrapper" id="wrapper">
+		
+	</div>
+
+
+
+	
+</body>
+</html>
+
+
+
+<script>
+	let wrapper = document.getElementById("wrapper");
+	let speed = 90;
+
+	for (let i=0; i<18; i++) {
+		let randomDelay = Math.floor(Math.random() * -10) * speed;
+		let randomSize = Math.floor(Math.random() * (40-10)) + 10;
+		let randomXShift = Math.floor(Math.random() * 80);
+		let randomYShift = Math.floor(Math.random() * 50);
+		let randomDuration = (Math.floor(Math.random() * (5-1)) + 1) * speed;
+
+		let object = document.createElement("div");
+		object.classList.add("object");
+		object.style.width = randomSize +"vw";
+		object.style.height = randomSize + "vw";
+		object.style.top = (-2 * randomSize + randomYShift) + "vh";
+		object.style.left = (-2 * randomSize + randomXShift) +"vw";
+  		if (Math.floor(Math.random() * 2)) {
+  			object.style.animationName = "updown";
+  		} else {
+  			object.style.animationName = "zigzag";
+  		}
+		object.style.animationDuration = randomDuration + "s";
+		object.style.animationTimingFunction = "ease-in-out";
+  		object.style.animationIterationCount = "infinite";
+  		object.style.animationDirection = "alternate";
+  		object.style.animationDelay = randomDelay + "s";
+
+  		// Make every second as circle
+  		if (Math.floor(Math.random() * 2)) {
+  			object.style.borderRadius = "50%";
+  		}
+  		// Make every second with different background
+  		if (Math.floor(Math.random() * 2)) {
+  			object.style.background = "linear-gradient(301deg, rgba(176,231,120,0.67) 4%, rgba(134,187,135,0.48) 88%)";
+  		} else {
+  			object.style.background = "linear-gradient(301deg, rgba(87,140,161,0.67) 4%, rgba(40,77,119,0.48) 88%)";
+  		}
+		wrapper.append(object);
+	}
+
+
+</script>

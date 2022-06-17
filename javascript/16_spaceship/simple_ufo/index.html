@@ -33,14 +33,14 @@
 
 <script>
 
-	let posX = document.body.clientHeight / 2;
-	let posY = document.body.clientWidth / 2;
+	let posX = document.body.clientWidth / 2;
+	let posY = document.body.clientHeight / 2;
 	let stepSize = 15;
 	let ufo = document.getElementById("ufo");
 
 
-	ufo.style.top = posX + "px";
-	ufo.style.left = posY + "px";
+	ufo.style.top = posY + "px";
+	ufo.style.left = posX + "px";
 
 
 	function step(event) {
