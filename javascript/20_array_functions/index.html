@@ -19,6 +19,12 @@
 	<h2>The reduce function</h2>
 	<p>Creates a single item from a given array. You decide how!</p>
 	
+	<h2>The sort function</h2>
+	<p>Sorts the array. You decide how!</p>
+
+	<h2>The find function</h2>
+	<p>Find an element in the array. You decide how!</p>
+
 </body>
 </html>
 
@@ -38,4 +44,14 @@
 	let startC = [1,2,3,4];
 	let resultC = startC.reduce((res, i) => res+i, 0); // result is 10 
 	console.log(resultC);
+
+	// Sort
+	let startD = [1,2,3,4];
+	let resultD = startD.sort((a,b) => a.localCompare(b)); // result is [1,2,3,4]
+	console.log(resultD);
+
+	// Find 
+	let startE = [1,2,3,4];
+	let resultE = startE.find(i => i == 2); // result is 2
+	console.log(resultE);
 </script>

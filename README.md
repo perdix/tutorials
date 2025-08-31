@@ -10,6 +10,6 @@ Currently, you'll find snippets of:
 - HTML&CSS
 - JavaScript
 - PHP
-- SvelteKit
+- Svelte/Kit
 
-If somethings is out of date, if you find any errors or if you want to add snippets, I am happy to accept any PRs.
+If somethings is out of date, if you find any errors or if you want to add snippets, I am happy to accept any PRs. Just send me a message!
