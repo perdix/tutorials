@@ -9,4 +9,3 @@
 - Basic svelte syntax (if, each)
 - Basic dynamic states and binding
 - Basic form example
-- CRUD example
